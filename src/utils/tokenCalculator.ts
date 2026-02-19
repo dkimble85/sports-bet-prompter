@@ -7,14 +7,9 @@ export type Model =
   | 'gpt-4-turbo'
   | 'gpt-4'
   | 'gpt-3.5-turbo'
-  | 'claude-4-opus'
-  | 'claude-4-sonnet'
-  | 'claude-4-haiku'
-  | 'claude-3-5-sonnet-20241022'
-  | 'claude-3-5-sonnet-20240620'
-  | 'claude-3-opus-20240229'
-  | 'claude-3-haiku-20240307'
-  | 'claude-3-5-haiku-20241022'
+  | 'claude-4-6-opus'
+  | 'claude-4-6-sonnet'
+  | 'deepseek-r1'
   | 'gemini-3-pro'
   | 'gemini-2.5-pro'
   | 'gemini-2.5-flash'
@@ -43,14 +38,9 @@ const PRICING_PER_MILLION: Record<Model, { input: number; output: number }> = {
   'gpt-4-turbo': { input: 10.00, output: 30.00 },
   'gpt-4': { input: 30.00, output: 60.00 },
   'gpt-3.5-turbo': { input: 0.50, output: 1.50 },
-  'claude-4-opus': { input: 15.00, output: 75.00 },
-  'claude-4-sonnet': { input: 3.00, output: 15.00 },
-  'claude-4-haiku': { input: 1.00, output: 5.00 },
-  'claude-3-5-sonnet-20241022': { input: 3.00, output: 15.00 },
-  'claude-3-5-sonnet-20240620': { input: 3.00, output: 15.00 },
-  'claude-3-opus-20240229': { input: 15.00, output: 75.00 },
-  'claude-3-haiku-20240307': { input: 0.25, output: 1.25 },
-  'claude-3-5-haiku-20241022': { input: 1.00, output: 5.00 },
+  'claude-4-6-opus': { input: 5.00, output: 25.00 },
+  'claude-4-6-sonnet': { input: 3.00, output: 15.00 },
+  'deepseek-r1': { input: 0.55, output: 2.19 },
   'gemini-3-pro': { input: 2.00, output: 12.00 },
   'gemini-2.5-pro': { input: 1.25, output: 10.00 },
   'gemini-2.5-flash': { input: 0.10, output: 0.40 },
@@ -66,14 +56,9 @@ const ENCODING_MAP: Record<string, string> = {
   'gpt-4-turbo': 'o200k_base',
   'gpt-4': 'cl100k_base',
   'gpt-3.5-turbo': 'cl100k_base',
-  'claude-4-opus': 'cl100k_base',
-  'claude-4-sonnet': 'cl100k_base',
-  'claude-4-haiku': 'cl100k_base',
-  'claude-3-5-sonnet-20241022': 'cl100k_base',
-  'claude-3-5-sonnet-20240620': 'cl100k_base',
-  'claude-3-opus-20240229': 'cl100k_base',
-  'claude-3-haiku-20240307': 'cl100k_base',
-  'claude-3-5-haiku-20241022': 'cl100k_base',
+  'claude-4-6-opus': 'cl100k_base',
+  'claude-4-6-sonnet': 'cl100k_base',
+  'deepseek-r1': 'cl100k_base',
   'gemini-3-pro': 'cl100k_base',
   'gemini-2.5-pro': 'cl100k_base',
   'gemini-2.5-flash': 'cl100k_base',
@@ -134,14 +119,9 @@ export const AVAILABLE_MODELS: { value: Model; label: string; provider: string }
   { value: 'gpt-4-turbo', label: 'GPT-4 Turbo', provider: 'OpenAI' },
   { value: 'gpt-4', label: 'GPT-4', provider: 'OpenAI' },
   { value: 'gpt-3.5-turbo', label: 'GPT-3.5 Turbo', provider: 'OpenAI' },
-  { value: 'claude-4-opus', label: 'Claude 4 Opus', provider: 'Anthropic' },
-  { value: 'claude-4-sonnet', label: 'Claude 4 Sonnet', provider: 'Anthropic' },
-  { value: 'claude-4-haiku', label: 'Claude 4 Haiku', provider: 'Anthropic' },
-  { value: 'claude-3-5-sonnet-20241022', label: 'Claude 3.5 Sonnet (Oct)', provider: 'Anthropic' },
-  { value: 'claude-3-5-sonnet-20240620', label: 'Claude 3.5 Sonnet (Jun)', provider: 'Anthropic' },
-  { value: 'claude-3-opus-20240229', label: 'Claude 3 Opus', provider: 'Anthropic' },
-  { value: 'claude-3-haiku-20240307', label: 'Claude 3 Haiku', provider: 'Anthropic' },
-  { value: 'claude-3-5-haiku-20241022', label: 'Claude 3.5 Haiku', provider: 'Anthropic' },
+  { value: 'claude-4-6-opus', label: 'Claude 4.6 Opus', provider: 'Anthropic' },
+  { value: 'claude-4-6-sonnet', label: 'Claude 4.6 Sonnet', provider: 'Anthropic' },
+  { value: 'deepseek-r1', label: 'DeepSeek R1', provider: 'DeepSeek' },
   { value: 'gemini-3-pro', label: 'Gemini 3 Pro', provider: 'Google' },
   { value: 'gemini-2.5-pro', label: 'Gemini 2.5 Pro', provider: 'Google' },
   { value: 'gemini-2.5-flash', label: 'Gemini 2.5 Flash', provider: 'Google' },

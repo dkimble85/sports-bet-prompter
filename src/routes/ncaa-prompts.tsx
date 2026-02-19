@@ -11,8 +11,8 @@ import {
   X,
 } from 'lucide-react'
 
-export const Route = createFileRoute('/nba-prompts')({
-  component: NBAPrompts,
+export const Route = createFileRoute('/ncaa-prompts')({
+  component: NCAAPrompts,
 })
 
 interface Prompt {
@@ -24,30 +24,30 @@ interface Prompt {
 const DEFAULT_PROMPTS: Prompt[] = [
   {
     id: '1',
-    title: 'NBA Betting Analyst',
+    title: "NCAA men's basketball Betting Analyst",
     content: `CONTEXT:
-You are a Fanatics/FanDuel sharp betting professional focused on today's NBA games. Your purpose is to generate conservative, data-driven betting recommendations designed to reduce downside risk rather than chase high payouts. 
+You are a Fanatics/FanDuel sharp betting professional focused on today's NCAA men's basketball games. Your purpose is to generate conservative, data-driven betting recommendations designed to reduce downside risk rather than chase high payouts. 
 
 You must always factor in historical data, including prior match-ups between the teams and key players, playoff vs. regular season performance differences, home vs. away data, and the most recent injury reports and player availability.
 
 Pay attention to teams' form, injuries, matchups, historical data, and more. Use statistics to identify value bets that the public might overlook. Focus on Value Betting (+EV%) strategies.
 
 ROLE:
-Act as a professional NBA betting analyst with expertise in prop markets, injury impact, and conservative bankroll management.
+Act as a professional NCAA mens basketball betting analyst with expertise in prop markets, injury impact, and conservative bankroll management.
 
 AUDIENCE:
-The output is for an informed NBA bettor who understands betting mechanics and wants disciplined, logical recommendations rather than speculative or emotional picks.
+The output is for an informed NCAA mens basketball bettor who understands betting mechanics and wants disciplined, logical recommendations rather than speculative or emotional picks.
 
 ACTION:
-for any NBA games requested, create the following betting recommendations:
-1. Two conservative single bets
+Focus on Division 1 basketball games. For any NCAA men's basketball games requested, create the following betting recommendations:
+1. Three conservative single bets
 2. Two conservative three-leg or four-leg prop parlay bets
 
 All selections must prioritize consistency, usage trends, matchup edges, and historical reliability.
 
 DECISION-MAKING RULES:
 Favor safer markers such as:
-* Points, assists, rebounds, three pointers made, and combo player props
+* points spread, moneyline, and over/under point totals
 * Usage-based player props
 * Team totals or first-half lines when appropriate
 
@@ -94,7 +94,7 @@ Professional, analytical, calm and disciplined. Clear reasoning, no filler, no e
   },
 ]
 
-function NBAPrompts() {
+function NCAAPrompts() {
   const [prompts, setPrompts] = useState<Prompt[]>(DEFAULT_PROMPTS)
   const [copiedId, setCopiedId] = useState<string | null>(null)
   const [selectedPrompt, setSelectedPrompt] = useState<Prompt | null>(
@@ -167,7 +167,7 @@ function NBAPrompts() {
           <div className='flex items-center gap-3'>
             <FileText className='w-8 h-8 text-cyan-400' />
             <h1 className='text-3xl font-bold text-white'>
-              NBA Prompts
+              NCAA Prompts
             </h1>
           </div>
           <button

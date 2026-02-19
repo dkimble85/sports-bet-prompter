@@ -93,6 +93,19 @@ export default function Header() {
             <Trophy size={20} />
             <span className='font-medium'>NFL Prompts</span>
           </Link>
+
+          <Link
+            to='/ncaa-prompts'
+            onClick={() => setIsOpen(false)}
+            className='flex items-center gap-3 p-3 rounded-lg hover:bg-gray-800 transition-colors mb-2'
+            activeProps={{
+              className:
+                'flex items-center gap-3 p-3 rounded-lg bg-cyan-600 hover:bg-cyan-700 transition-colors mb-2',
+            }}
+          >
+            <Trophy size={20} />
+            <span className='font-medium'>NCAA Prompts</span>
+          </Link>
         </nav>
       </aside>
     </>

@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as NflPromptsRouteImport } from './routes/nfl-prompts'
+import { Route as NcaaPromptsRouteImport } from './routes/ncaa-prompts'
 import { Route as NbaPromptsRouteImport } from './routes/nba-prompts'
 import { Route as CalculatorRouteImport } from './routes/calculator'
 import { Route as IndexRouteImport } from './routes/index'
@@ -17,6 +18,11 @@ import { Route as IndexRouteImport } from './routes/index'
 const NflPromptsRoute = NflPromptsRouteImport.update({
   id: '/nfl-prompts',
   path: '/nfl-prompts',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NcaaPromptsRoute = NcaaPromptsRouteImport.update({
+  id: '/ncaa-prompts',
+  path: '/ncaa-prompts',
   getParentRoute: () => rootRouteImport,
 } as any)
 const NbaPromptsRoute = NbaPromptsRouteImport.update({
@@ -39,12 +45,14 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/calculator': typeof CalculatorRoute
   '/nba-prompts': typeof NbaPromptsRoute
+  '/ncaa-prompts': typeof NcaaPromptsRoute
   '/nfl-prompts': typeof NflPromptsRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/calculator': typeof CalculatorRoute
   '/nba-prompts': typeof NbaPromptsRoute
+  '/ncaa-prompts': typeof NcaaPromptsRoute
   '/nfl-prompts': typeof NflPromptsRoute
 }
 export interface FileRoutesById {
@@ -52,20 +60,33 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/calculator': typeof CalculatorRoute
   '/nba-prompts': typeof NbaPromptsRoute
+  '/ncaa-prompts': typeof NcaaPromptsRoute
   '/nfl-prompts': typeof NflPromptsRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/calculator' | '/nba-prompts' | '/nfl-prompts'
+  fullPaths:
+    | '/'
+    | '/calculator'
+    | '/nba-prompts'
+    | '/ncaa-prompts'
+    | '/nfl-prompts'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/calculator' | '/nba-prompts' | '/nfl-prompts'
-  id: '__root__' | '/' | '/calculator' | '/nba-prompts' | '/nfl-prompts'
+  to: '/' | '/calculator' | '/nba-prompts' | '/ncaa-prompts' | '/nfl-prompts'
+  id:
+    | '__root__'
+    | '/'
+    | '/calculator'
+    | '/nba-prompts'
+    | '/ncaa-prompts'
+    | '/nfl-prompts'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   CalculatorRoute: typeof CalculatorRoute
   NbaPromptsRoute: typeof NbaPromptsRoute
+  NcaaPromptsRoute: typeof NcaaPromptsRoute
   NflPromptsRoute: typeof NflPromptsRoute
 }
 
@@ -76,6 +97,13 @@ declare module '@tanstack/react-router' {
       path: '/nfl-prompts'
       fullPath: '/nfl-prompts'
       preLoaderRoute: typeof NflPromptsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/ncaa-prompts': {
+      id: '/ncaa-prompts'
+      path: '/ncaa-prompts'
+      fullPath: '/ncaa-prompts'
+      preLoaderRoute: typeof NcaaPromptsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/nba-prompts': {
@@ -106,6 +134,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   CalculatorRoute: CalculatorRoute,
   NbaPromptsRoute: NbaPromptsRoute,
+  NcaaPromptsRoute: NcaaPromptsRoute,
   NflPromptsRoute: NflPromptsRoute,
 }
 export const routeTree = rootRouteImport

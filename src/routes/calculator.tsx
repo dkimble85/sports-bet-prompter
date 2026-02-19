@@ -17,7 +17,7 @@ export const Route = createFileRoute('/calculator')({
 
 function TokenCalculator() {
   const [inputText, setInputText] = useState('')
-  const [selectedModel, setSelectedModel] = useState<Model>('claude-4-sonnet')
+  const [selectedModel, setSelectedModel] = useState<Model>('claude-4-6-opus')
   const [outputTokens, setOutputTokens] = useState(0)
   const [result, setResult] = useState<TokenCount | null>(null)
   const [cost, setCost] = useState<CostEstimate | null>(null)

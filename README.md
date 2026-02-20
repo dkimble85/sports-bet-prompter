@@ -1,4 +1,4 @@
-Welcome to your new TanStack Start app! 
+Welcome to your new Sports Betting AI Prompt app! 
 
 # Getting Started
 

@@ -1,12 +1,5 @@
-import { createFileRoute } from '@tanstack/react-router'
-import {
-  Zap,
-  Server,
-  Route as RouteIcon,
-  Shield,
-  Waves,
-  Sparkles,
-} from 'lucide-react'
+import { createFileRoute, Link } from '@tanstack/react-router'
+import { Zap, DollarSign, CircleFadingPlus } from 'lucide-react'
 
 export const Route = createFileRoute('/')({ component: App })
 
@@ -14,39 +7,21 @@ function App() {
   const features = [
     {
       icon: <Zap className='w-12 h-12 text-cyan-400' />,
-      title: 'Powerful Server Functions',
+      title: 'Crafted Powerful Prompts',
       description:
-        'Write server-side code that seamlessly integrates with your client components. Type-safe, secure, and simple.',
+        'Handcrafted intelligent prompts that drive your bets. Get insights, predictions, and recommendations from your data. Promopts designed for sports betting success.',
     },
     {
-      icon: <Server className='w-12 h-12 text-cyan-400' />,
-      title: 'Flexible Server Side Rendering',
+      icon: <CircleFadingPlus className='w-12 h-12 text-cyan-400' />,
+      title: 'Add Your Own Prompts',
       description:
-        'Full-document SSR, streaming, and progressive enhancement out of the box. Control exactly what renders where.',
+        'Add new prompts to refine your betting strategy. Get insights from your sports betting data and make smarter bets. NOTE: These will not be saved and will reset on page refresh.',
     },
     {
-      icon: <RouteIcon className='w-12 h-12 text-cyan-400' />,
-      title: 'API Routes',
+      icon: <DollarSign className='w-12 h-12 text-cyan-400' />,
+      title: 'Token Calculator',
       description:
-        'Build type-safe API endpoints alongside your application. No separate backend needed.',
-    },
-    {
-      icon: <Shield className='w-12 h-12 text-cyan-400' />,
-      title: 'Strongly Typed Everything',
-      description:
-        'End-to-end type safety from server to client. Catch errors before they reach production.',
-    },
-    {
-      icon: <Waves className='w-12 h-12 text-cyan-400' />,
-      title: 'Full Streaming Support',
-      description:
-        'Stream data from server to client progressively. Perfect for AI applications and real-time updates.',
-    },
-    {
-      icon: <Sparkles className='w-12 h-12 text-cyan-400' />,
-      title: 'Next Generation Ready',
-      description:
-        'Built from the ground up for modern web applications. Deploy anywhere JavaScript runs.',
+        'Calculate token usage and costs for your AI interactions. Optimize your prompts for performance and budget.',
     },
   ]
 
@@ -57,15 +32,58 @@ function App() {
         <div className='relative max-w-5xl mx-auto'>
           <div className='flex items-center justify-center gap-6 mb-6'>
             <h1 className='text-6xl md:text-7xl font-black text-white [letter-spacing:-0.08em]'>
-              <span className='text-gray-300'>TANSTACK</span>{' '}
+              <span className='text-gray-300'>SPORTS BET</span>{' '}
               <span className='bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent'>
-                START
+                PROMPTER
               </span>
             </h1>
           </div>
           <p className='text-2xl md:text-3xl text-gray-300 mb-4 font-light'>
-            The framework for next generation AI applications
+            Intelligent prompts for sports betting insights
           </p>
+          <p className='text-lg text-gray-400 max-w-3xl mx-auto mb-8'>
+            Get better predictions, recommendations, and insights from
+            your favorite AI chat client using our sports betting
+            prompts. Optimize your bets with AI-driven prompts. Build
+            bets backed by data and powered by AI. Calculate token
+            usage and costs for your interactions.
+          </p>
+
+          <p className='text-2xl md:text-3xl text-gray-300 mb-4 font-light mt-3'>
+            Various sports to choose from
+          </p>
+          <div className='flex flex-wrap justify-center gap-3 mb-8'>
+            <Link
+              to='/ncaa-prompts'
+              className='bg-slate-800/60 border border-slate-600 px-4 py-2 rounded-full text-gray-300 text-sm font-medium hover:border-cyan-400/50 hover:text-cyan-400 transition-colors'
+            >
+              College Basketball
+            </Link>
+            <Link
+              to='/college-football-prompts'
+              className='bg-slate-800/60 border border-slate-600 px-4 py-2 rounded-full text-gray-300 text-sm font-medium hover:border-cyan-400/50 hover:text-cyan-400 transition-colors'
+            >
+              College Football
+            </Link>
+            <Link
+              to='/nba-prompts'
+              className='bg-slate-800/60 border border-slate-600 px-4 py-2 rounded-full text-gray-300 text-sm font-medium hover:border-cyan-400/50 hover:text-cyan-400 transition-colors'
+            >
+              NBA
+            </Link>
+            <Link
+              to='/nfl-prompts'
+              className='bg-slate-800/60 border border-slate-600 px-4 py-2 rounded-full text-gray-300 text-sm font-medium hover:border-cyan-400/50 hover:text-cyan-400 transition-colors'
+            >
+              NFL
+            </Link>
+            <Link
+              to='/mlb-prompts'
+              className='bg-slate-800/60 border border-slate-600 px-4 py-2 rounded-full text-gray-300 text-sm font-medium hover:border-cyan-400/50 hover:text-cyan-400 transition-colors'
+            >
+              MLB
+            </Link>
+          </div>
         </div>
       </section>
 
